@@ -26,18 +26,35 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    let choice = prompt(`ROUND ${roundNumber}` + `\nScores: You - ${playerScore} CPU - ${computerScore}`+ "\n\nEnter your choice: ", "rock");
-    choice = choice.toLowerCase();
-    if(!(choice === 'rock' || choice ==='paper' || choice === 'scissors')){
-        if(confirm("IT'S EITHER ROCK OR PAPER OR SCISSORS HAVE YOU NEVER PLAYED BEFORE?!")){
-            choice = getPlayerChoice();
-        } else return -1;
+    while(true){
+        let choice = prompt(
+            `ROUND ${roundNumber}` + `\nScores: You - ${playerScore} CPU - ${computerScore}`+ "\n\nEnter your choice: ", 
+            "rock"
+        );
+
+        if(choice === null){
+            break;
+        }
+
+        choice = choice.toLowerCase();
+
+        if(choice === 'rock' || choice ==='paper' || choice === 'scissors') {
+            return choice;
+        } else {
+            const retry = confirm("IT'S EITHER ROCK OR PAPER OR SCISSORS HAVE YOU NEVER PLAYED BEFORE?!");
+            if(!retry) {
+                break;
+            }
+        }
     }
-    return choice;
+    return null;
 }
 
 function playRound(){
     let playerChoice = getPlayerChoice();
+    if(playerChoice === null) {
+        return null;
+    }
     const computerChoice = getComputerChoice();
     const mappedPlayerChoice = mapChoice[playerChoice];
     const mappedComputerChoice = mapChoice[computerChoice];
@@ -57,12 +74,16 @@ function playRound(){
     }else{
         alert("Undefined value")
     }
+    return 1;
 }
 
 alert("You will play five rounds of rock paper scissors against the computer !")
 
 for(let i = 0;i < 5;i++){
-    playRound();
+    const round = playRound();
+    if(round === null) {
+        break;
+    }
     roundNumber++;
 }
 
