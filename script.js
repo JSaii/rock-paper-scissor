@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 1;
 let tieCounter = 0;
+const ROCK_THRESHOLD = 0.3;
+const SCISSORS_THRESHOLD = 0.6;
 
 const mapChoice = {
     'rock': 0,
@@ -17,15 +19,13 @@ const judgeMatrix = [
 
 function getComputerChoice(){
     const randn = Math.random();
-
-    if(randn <= 0.3){
+    
+    if(randn <= ROCK_THRESHOLD) {
         return "rock";
-    }else if(0.3 < randn && randn <= 0.6){
+    } else if(randn <= SCISSORS_THRESHOLD) {
         return "paper";
-    }else if(0.6 < randn && randn <= 1){
+    } else {
         return "scissors";
-    }else{
-        return "Undefined value";
     }
 }
 
