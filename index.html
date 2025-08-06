@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock-paper-scissors!</title>
 </head>
 <body>
+    <div id="left-side">
+        <h1 id="player-score">0</h1>
+        <h1>YOU</h1>
+        <div class="choices">
+            <button class="choice-button" id="rock">ROCK</button>
+            <button class="choice-button" id="paper">PAPER</button>
+            <button class="choice-button" id="scissors">SCISSOR</button>
+        </div>
+        <button id="go-bt">GO</button>
+        <button id="reset-bt">RESET</button>
+
+    </div>
+    <div id="right-side">
+        <h1 id="cpu-score">0</h1>
+        <h1>CPU</h1>
+        <div class="choices">
+            <button class="choice-button cpu" id="cpu-rock-bt">ROCK</button>
+            <button class="choice-button cpu" id="cpu-paper-bt">PAPER</button>
+            <button class="choice-button cpu" id="cpu-scissors-bt">SCISSOR</button>
+        </div>
+            <button class="choice-button cpu" id="cpu-go-bt">GO</button>
+            <button id="reset-bt-cpu">RESET</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

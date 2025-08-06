@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    margin: 0;
+}
+
+body > *{
+    flex: 1;
+    height: 100vh;
+}
+
+button{
+    background-color: rgb(0,0,0,0);
+    border: solid 1px;
+    border-radius: 18px;
+    height: 120px;
+    width: 120px;
+}
+
+button.selected{
+    background-color: rgb(0,0,0,0.1);
+}
+
+button.loser{
+    background-color: rgb(255,0,0,0.1);;
+}
+
+button.winner{
+    background-color: rgb(0,255,0,0.1);;
+}
+
+#left-side,
+#right-side{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#left-side{
+    border-right: solid 1px;
+}
+
+#go-bt{
+    width: 200px;
+}
+
+.choice-button.cpu{
+    opacity: 0.6;
+}
+
+#cpu-go-bt{
+    opacity: 0;
+}
+
+#reset-bt-cpu{
+    opacity: 0;
+}
