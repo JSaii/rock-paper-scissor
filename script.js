@@ -34,8 +34,6 @@ function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let cpuChosenButton = null
-
 async function stateManager(state){
     if(state === "initial"){
         stateObject = {...INITIAL_VALUES};
@@ -80,6 +78,7 @@ async function stateManager(state){
             button.classList.remove("loser")
         });
         stateObject.roundWinner = null;
+        stateObject.playerChoice = null;
     }
 }
 
